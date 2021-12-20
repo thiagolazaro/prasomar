@@ -12,7 +12,7 @@ export class CreatePosts1639322005744 implements MigrationInterface {
             isPrimary: true,
           },
           {
-            name: 'name',
+            name: 'title',
             type: 'varchar',
           },
           {
@@ -24,6 +24,10 @@ export class CreatePosts1639322005744 implements MigrationInterface {
             type: 'varchar',
           },
           {
+            name: 'user_id',
+            type: 'varchar',
+          },
+          {
             name: 'created_at',
             type: 'timestamp',
             default: 'now()',
@@ -32,6 +36,14 @@ export class CreatePosts1639322005744 implements MigrationInterface {
             name: 'updated_at',
             type: 'timestamp',
             default: 'now()',
+          },
+        ],
+        foreignKeys: [
+          {
+            name: 'fk_posts_user',
+            columnNames: ['user_id'],
+            referencedTableName: 'users',
+            referencedColumnNames: ['id'],
           },
         ],
       }),

@@ -1,4 +1,4 @@
-version: "3.9"
+version: "3.8"
 
 services:
   app:
@@ -7,7 +7,9 @@ services:
     container_name: prasomar-api
     restart: always
     ports:
-      - ${SERVER_PORT}:${SERVER_PORT}
+      - ${APP_PORT}:${APP_PORT}
+    environment:
+      - TYPEORM_HOST=db
     volumes:
       - .:/usr/app
     depends_on:
@@ -17,11 +19,11 @@ services:
     image:  'postgres:latest'
     container_name: prasomar-db
     ports:
-      - ${PG_PORT}:5432
+      - ${TYPEORM_PORT}:5432
     environment:
-      - POSTGRES_USER=${PG_USER}
-      - POSTGRES_PASSWORD=${PG_PASS}
-      - POSTGRES_DB=${PG_NAME}
+      - POSTGRES_USER=${TYPEORM_USERNAME}
+      - POSTGRES_PASSWORD=${TYPEORM_PASSWORD}
+      - POSTGRES_DB=${TYPEORM_DATABASE}
     volumes:
       - ./pgdata:/var/lib/postgres/data
 
