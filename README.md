@@ -45,7 +45,7 @@ git clone https://github.com/thiagolazaro/prasomar
 ```
 
 ### Configurando o .env do projeto
-Renomie o .env-example para .env e salva.
+Renomeie o .env-example para .env e salva.
 
 ### Executando com docker
 Com docker pasta executar o comando
