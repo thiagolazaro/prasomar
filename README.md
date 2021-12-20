@@ -44,6 +44,9 @@ Abre terminal ou cmd (caso esteja utilizando o Windows) e digite
 git clone https://github.com/thiagolazaro/prasomar
 ```
 
+### Configurando o .env do projeto
+Renomie o .env-example para .env e salva.
+
 ### Executando com docker
 Com docker pasta executar o comando
 ```
